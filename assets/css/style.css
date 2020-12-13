@@ -330,6 +330,30 @@ section {
   text-align: center;
 }
 
+/* specific match */
+.service-grid-item.basic {
+  grid-column: 2 / span 1;
+}
+
+.both {
+  grid-column: 2 / span 2
+}
+
+.service-grid-item.cancel {
+  grid-row: 1 / -1;
+  writing-mode: vertical-lr;
+  grid-column: 1;
+  grid-row: 1 / -1;
+  transform: rotate(180deg);
+}
+
+.grid-head,
+.grid-price,
+.service-grid-item.cancel {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 /* REACH OUT STYLES START */
 .contact {
   border-radius: 5px 5px 0 0;
@@ -494,6 +518,25 @@ section {
 
   .step-text {
     flex: 100%;
+  }
+
+  .service-grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-grid-item.basic {
+    grid-column: 1;
+  }
+
+  .service-grid-item.both {
+    grid-column: 1 / -1;
+  }
+
+  .service-grid-item.cancel {
+    transform: none;
+    writing-mode: unset;
+    grid-column: 1 / -1;
+    grid-row: -1;
   }
 
   /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
