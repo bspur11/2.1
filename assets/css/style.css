@@ -369,31 +369,98 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+
 }
 
 .trainer {
   flex: 1;
-  margin: 0 auto 30px auto;
+  overflow: hidden;
+  margin: 0 10px 30px;
   background: #024e76;
   color: #fce138;
+  position: relative;
 
 }
 
-.trainer img {
+
+
+.trainer-1 {
+  background-image: url('../images/trainer-1.jpg');
+  background-size: cover;
+  position: relative;
+  z-index: 111;
+}
+
+.trainer-2 {
+  background-image: url('../images/trainer-2.jpg');
+  background-size: cover;
+  position: relative;
+  z-index: 111;
+}
+
+.trainer-3 {
+  background-image: url('../images/trainer-3.jpg');
+  background-size: cover;
+  position: relative;
+  z-index: 222;
+}
+
+.trainer-img {
   width: 100%;
+  min-height: 300px;
+  display: flex;
+  padding: 15px;
+  align-items: flex-end;
+
 }
+
+.trainer:hover .trainer-img {
+  opacity: 0.5;
+  transition: 2s;
+}
+
+.trainer-img::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  /* opacity: 0;
+  transition: 0.5; */
+  background: linear-gradient(rgb(2, 78, 118, 0.3), rgba(252, 225, 56, 0.3));
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.trainer h3 {
+  font-size: 36px;
+  margin-bottom: 5px;
+  position: relative;
+  top: 350px;
+
+}
+
+.trainer h4 {
+  font-size: 25px;
+  position: relative;
+  top: 300px;
+}
+
+.trainer:hover .trainer-img h3,
+.trainer:hover .trainer-img h4 {
+  top: 0px;
+  transition: 0.6s;
+}
+
 
 .trainer-bio {
   padding: 25px;
   line-height: 1.3;
 }
 
-.trainer-bio h3 {
-  font-size: 28px;
-
-}
+.trainer-bio h3 {}
 
 .trainer-bio h4 {
+
   font-weight: lighter;
   font-size: 22px;
   margin-bottom: 15px;
