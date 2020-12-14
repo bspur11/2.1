@@ -369,18 +369,15 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+
 }
 
 .trainer {
   flex: 1;
-  margin: 0 auto 30px auto;
-  background: #024e76;
-  color: #fce138;
-
-}
-
-.trainer img {
-  width: 100%;
+  Overflow: hidden;
+  margin: 20px;
+  background: var(--secondary-color);
+  color: var(--primary-color);
 }
 
 .trainer-bio {
@@ -390,10 +387,11 @@ section {
 
 .trainer-bio h3 {
   font-size: 28px;
-
+  display: none;
 }
 
 .trainer-bio h4 {
+  display: none;
   font-weight: lighter;
   font-size: 22px;
   margin-bottom: 15px;
@@ -403,6 +401,80 @@ section {
   font-size: 17px;
 
 }
+
+
+
+.trainer-1 {
+  background-image: url('../images/trainer-1.jpg');
+  background-size: cover;
+  position: relative;
+  z-index: 111;
+}
+
+.trainer-2 {
+  background-image: url('../images/trainer-2.jpg');
+  background-size: cover;
+  position: relative;
+  z-index: 111;
+}
+
+.trainer-3 {
+  background-image: url('../images/trainer-3.jpg');
+  background-size: cover;
+  position: relative;
+  z-index: 222;
+}
+
+.trainer-img {
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  padding: 15px;
+  align-items: flex-end;
+
+}
+
+.trainer:hover .trainer-img {
+  opacity: 0.5;
+  transition: 2s;
+}
+
+.trainer-img::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  /* opacity: 0;
+  transition: 0.5; */
+  background: linear-gradient(rgb(2, 78, 118, 0.3), rgba(252, 225, 56, 0.3));
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.trainer h3 {
+  font-size: 36px;
+  margin-bottom: 5px;
+  position: relative;
+  top: 400px;
+
+}
+
+.trainer h4 {
+  font-size: 25px;
+  position: relative;
+  top: 300px;
+}
+
+.trainer:hover .trainer-img h3,
+.trainer:hover .trainer-img h4 {
+  top: 0px;
+  transition: 0.6s;
+}
+
+
+
+
+
 
 /* TRAINER STYLES END */
 
@@ -572,6 +644,7 @@ section {
 @media screen and (max-width: 768px) {
 
   /*  between 768px and 575px */
+
   section {
     padding: 30px 15px;
   }
@@ -597,6 +670,41 @@ section {
   .step-text {
     flex: 100%;
   }
+
+
+
+  .service-grid-container {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .service-grid-item.basic {
+    grid-column: 1;
+  }
+
+  .service-grid-item.both {
+    grid-column: 1 / -1;
+  }
+
+  .service-grid-item.cancel {
+    transform: none;
+    writing-mode: unset;
+    grid-column: 1 / -1;
+    grid-row: -1;
+  }
+
+  /* .trainer-img h3 {
+    display: none;
+  }
+
+  .trainer-img h4 {
+    display: none;
+  }
+
+  .trainer-img:after {
+    display: none;
+  } */
+
+
 
   /* MEDIA QUERY FOR MOBILE PHONES AND SMALLER */
   @media screen and (max-width: 575px) {
